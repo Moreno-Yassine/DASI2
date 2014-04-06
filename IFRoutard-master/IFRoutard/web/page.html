@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+
+	<head>
+	<meta http-equiv ="Content-type" content = "text/html; charset=UTF-8">
+	<title> ROUTARD'IF : VOTRE VOYAGE, SIMPLEMENT ... </title>
+	</head>
+	
+	<body>
+	
+	<h1> IF'Routard </h1>
+	<h2> L'agence de voyage des INSALIENS </h2>
+	<br/>
+	<br/>
+	<h3> Inscription </h3>
+		<form action ="./ActionServletInscription" method ="POST">
+		
+		<input type = "hidden" name ="todo" value ="connexion" />
+		<div align="baseline"><br>
+		<input type="radio" name="civilite" value="Mr"> Mr<br>
+		<input type="radio" name="civilite" value="Mme" checked> Mme<br>
+		</div>
+		Nom : <input type ="text" name="nom" size = "20" maxlength = "20" /><br/>
+		Prenom : <input type ="text" name="prenom" size = "20"/><br/>
+		Adresse : <input type ="text" name="adresse" size = "40"/><br/>
+		Mail : <input type ="text" name="mail" size = "20" maxlength = "20" /><br/>
+		Tel : <input type ="text" name="tel" size = "20"/><br/>
+		Date de Naissance : <input type ="text" name="ddn" size = "40"/><br/>
+		
+		 <input type ="submit" name="Connexion" value="Connexion"/>
+		
+		</form>
+	<br/>
+	</body>
+	
+	
+</html>

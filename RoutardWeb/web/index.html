@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+
+	<head>
+	<meta http-equiv ="Content-type" content = "text/html; charset=UTF-8">
+	<title> ROUTARD'IF : VOTRE VOYAGE, SIMPLEMENT ... </title>
+	</head>
+	
+	<body>
+	
+	<h1> IF'Routard </h1>
+	<h2> L'agence de voyage des INSALIENS </h2>
+	<br/>
+	<br/>
+	<h3> Je suis déjà client(e) </h3>
+		<form action ="http://localhost:8080/RoutardWeb/ActionServlet" method ="POST">
+		
+		<input type = "hidden" name ="todo" value ="connexion" />
+		Identifiant : <input type ="text" name="Identifiant" size = "20" maxlength = "20" /><br/>
+		MDP : <input type ="password" name="MotdePasse" size = "20"/><br/>
+		 <input type ="submit" name="Connexion" value="Connexion"/>
+	
+		</form>
+	<br/>
+	<h3> Enregistrement </h3>
+		<form action ="http://localhost:8080/RoutardWeb/ActionServlet" method ="POST">
+		 <input type ="submit" name="Inscription" value="Inscription"/>
+		</form>
+	</body>
+	
+	
+</html>
