@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package servlet;
+package servlet.vue;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,14 +12,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import servlet.action.Action;
-import servlet.action.InscriptionAction;
 
 /**
  *
  * @author Slifer
  */
-public class ActionServlet extends HttpServlet {
+public class InscriptionVue extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,16 +30,19 @@ public class ActionServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Recuperer la requete HTTP
-        String tache = request.getParameter("todo");
-        // identification de la tâche
-        Action actionCourante = this.getAction(tache);
-        
-        actionCourante.execute(request);
-        
-        String vue = this.setVue(tache);
-        
-        request.getRequestDispatcher(vue).forward(request,response);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet InscriptionVue</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet InscriptionVue at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -82,29 +83,5 @@ public class ActionServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    private Action getAction(String todo) {
-        Action action = null;
-        switch (todo) {
-            case "Inscription":
-                action = new InscriptionAction();
-                break;
-            case "Connexion":
-                break;
-        }
-        return action;
-    }
-
-    private String setVue(String todo) {
-        String vue = null;
-        switch (todo) {
-            case "Inscription":
-                vue = "/InscriptionVue";
-                break;
-            case "Connexion":
-                break;
-        }
-        return vue;
-    }
 
 }
