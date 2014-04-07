@@ -37,7 +37,10 @@ public class ActionServlet extends HttpServlet {
         // identification de la tâche
         Action actionCourante = this.getAction(tache);
         
+        if (actionCourante!=null)
+        {
         actionCourante.execute(request);
+        }
         
         String vue = this.setVue(tache);
         
@@ -85,24 +88,43 @@ public class ActionServlet extends HttpServlet {
 
     private Action getAction(String todo) {
         Action action = null;
-        switch (todo) {
-            case "Inscription":
-                action = new InscriptionAction();
-                break;
-            case "Connexion":
-                break;
+        if ("Inscription".equals(todo))
+        {
+           // Redirection vers Inscription.html (vue)
+        }
+        else if ("Connexion".equals(todo))
+        {
+           //action = new ConnexionAction();
+        }
+        else if ("Retour".equals(todo))
+        {
+            //NOTHING
+        }
+        else if ("Validation".equals(todo))
+        {
+            action = new InscriptionAction();
         }
         return action;
     }
 
     private String setVue(String todo) {
         String vue = null;
-        switch (todo) {
-            case "Inscription":
-                vue = "/InscriptionVue";
-                break;
-            case "Connexion":
-                break;
+        if ("Inscription".equals(todo))
+        {
+           // Redirection vers Inscription.html (vue)
+            vue = "/InscriptionVue";
+        }
+        else if ("Connexion".equals(todo))
+        {
+           
+        }
+        else if ("Retour".equals(todo))
+        {
+            vue = "index.html";
+        }
+        else if ("Validation".equals(todo))
+        {
+            vue = "index.html";
         }
         return vue;
     }

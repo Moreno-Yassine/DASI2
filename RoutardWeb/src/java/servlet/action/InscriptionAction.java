@@ -18,7 +18,15 @@ public class InscriptionAction extends Action {
     @Override
     public void execute(HttpServletRequest request)
     {
-        
+        String var = (String) request.getAttribute("todo");
+        if ("Inscription".equals(var)) // ActionServlet => PageInscription
+        {
+            // RAS
+        }
+        else if("Validation".equals(var)) //<= PageInscription
+        {
+            // Créer Client
+        }
     }
     
 }

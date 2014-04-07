@@ -36,10 +36,30 @@ public class InscriptionVue extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet InscriptionVue</title>");            
+            out.println("<title>ROUTARD'IF : VOTRE VOYAGE, SIMPLEMENT ... [Inscription]</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet InscriptionVue at " + request.getContextPath() + "</h1>");
+            out.println("<h2> Inscription </h2>");
+            out.println("<br>");
+            out.println("<form action =\"./ActionServlet\" method =\"POST\">");
+            out.println("<table>\n" +
+"		<tr> <td>Civilité :</td> <td> <select name=\"civilite\" size=><option value=mr>MR</option><option value=mme>MME</option></select> </td> </tr>\n" +
+"		<tr> <td>Nom :</td> <td><input type =\"text\" name=\"nom\" size = \"20\" maxlength = \"20\" /> </td> </tr>\n" +
+"		<tr> <td>Prenom :</td> <td><input type =\"text\" name=\"prenom\" size = \"20\"/> </td> </tr>\n" +
+"		<tr> <td>Adresse :</td> <td><input type =\"text\" name=\"adresse\" size = \"40\"/> </td> </tr>\n" +
+"		<tr> <td>Mail :</td> <td><input type =\"text\" name=\"mail\" size = \"20\" maxlength = \"20\" /> </td> </tr>\n" +
+"		<tr> <td>Tel :</td> <td><input type =\"text\" name=\"tel\" size = \"20\"/>  </td> </tr>\n" +
+"		<tr> <td>Date de Naissance (JJ/MM/AAAA) :</td> <td><input type =\"text\" name=\"jour\" size = \"2\" maxlength = \"2\" />\n" +
+"							<input type =\"text\" name=\"mois\" size = \"2\" maxlength = \"2\" />\n" +
+"							<input type =\"text\" name=\"année\" size = \"4\" maxlength = \"4\" /> </td> </tr>\n" +
+"		<tr> <td>Mot de Passe :</td> <td><input type =\"password\" name=\"mdp\" size = \"20\" maxlength = \"20\" /> </td> </tr>\n" +
+"		<tr> <td>Confirmer Mot de Passe :</td> <td><input type =\"password\" name=\"conf_mdp\" size = \"20\" maxlength = \"20\" /> </td> </tr>\n" +
+"		</table>\n" +
+"		\n" +
+"		 <input type =\"submit\" name=\"todo\" value=\"Validation\"/>\n" +
+"		 <input type =\"submit\" name=\"todo\" value=\"Retour\"/>\n" +
+"		\n" +
+"		</form>");
             out.println("</body>");
             out.println("</html>");
         }
