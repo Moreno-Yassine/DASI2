@@ -16,26 +16,14 @@
 	<h3> Inscription </h3>
 		<form action ="./ActionServletInscription" method ="POST">
 		
-		<input type = "hidden" name ="todo" value ="connexion" />
 		<table>
-		<tr> <td>Civilité :</td> <td> <select name="civilite" size=><option value=mr>MR</option><option value=mme>MME</option></select> </td> </tr>
-		<tr> <td>Nom :</td> <td><input type ="text" name="nom" size = "20" maxlength = "20" /> </td> </tr>
-		<tr> <td>Prenom :</td> <td><input type ="text" name="prenom" size = "20"/> </td> </tr>
-		<tr> <td>Adresse :</td> <td><input type ="text" name="adresse" size = "40"/> </td> </tr>
-		<tr> <td>Mail :</td> <td><input type ="text" name="mail" size = "20" maxlength = "20" /> </td> </tr>
-		<tr> <td>Tel :</td> <td><input type ="text" name="tel" size = "20"/>  </td> </tr>
-		<tr> <td>Date de Naissance (JJ/MM/AAAA) :</td> <td><input type ="text" name="jour" size = "2" maxlength = "2" />
-							<input type ="text" name="mois" size = "2" maxlength = "2" />
-							<input type ="text" name="année" size = "4" maxlength = "4" /> </td> </tr>
-		<tr> <td>Mot de Passe :</td> <td><input type ="text" name="mdp" size = "20" maxlength = "20" /> </td> </tr>
-		<tr> <td>Confirmer Mot de Passe :</td> <td><input type ="text" name="conf_mdp" size = "20" maxlength = "20" /> </td> </tr>
+		<h1><tr> <td>IF ROUTARD</td> <td>NOM</td> <td> <A HREF="http://localhost:8080/RoutardWeb" TARGET="_top">Deconnexion</A> </td>  </tr></h1>
+		<tr> Recherche </tr>
+		<tr> <td> Rechercher Pays </td> <td> Rechercher Type de circuit </td> </tr>
+		<tr> <td> <input type ="text" name="RecherchePays" value="Pays"/> </td> <td> Liste: <select name="Type de voyage"> <option value=\"circuit\"> Circuit accompagné</option><option value=\"Séjour\"> Séjour</option></select> </td> </tr>
+		<tr> <td> <input type="submit" value="Rechercher Pays" name="todo"> </td> <td> <input type="submit" value="Rechercher Voyage" name="todo"> </td> <tr> 
 		</table>
-		
-		 <input type ="submit" name="Valider" value="Validation"/>
-		 <input type ="submit" name="Retour" value="Retour"/>
-		
 		</form>
-	<br/>
 	</body>
 	
 	

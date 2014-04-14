@@ -19,6 +19,7 @@ public class ClientDao
 	 * @param client L'objet client à persister en base de données
 	 */
 	public static void creerClient(Client client) {
+                System.out.println("DAO : "+ client);
 		JpaUtil.obtenirEntityManager().persist(client);
 	}
 	

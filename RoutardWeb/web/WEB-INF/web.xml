@@ -8,6 +8,14 @@
         <servlet-name>InscriptionVue</servlet-name>
         <servlet-class>servlet.vue.InscriptionVue</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConnexionVue</servlet-name>
+        <servlet-class>servlet.vue.ConnexionVue</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RecherchePaysVue</servlet-name>
+        <servlet-class>servlet.vue.RecherchePaysVue</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ActionServlet</servlet-name>
         <url-pattern>/ActionServlet</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>InscriptionVue</servlet-name>
         <url-pattern>/InscriptionVue</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConnexionVue</servlet-name>
+        <url-pattern>/ConnexionVue</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecherchePaysVue</servlet-name>
+        <url-pattern>/RecherchePaysVue</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

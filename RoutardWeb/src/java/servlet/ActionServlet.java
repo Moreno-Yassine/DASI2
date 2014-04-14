@@ -13,7 +13,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import servlet.action.Action;
+import servlet.action.ConnexionAction;
 import servlet.action.InscriptionAction;
+import servlet.action.RecherchePaysAction;
+import util.JpaUtil;
 
 /**
  *
@@ -34,6 +37,7 @@ public class ActionServlet extends HttpServlet {
             throws ServletException, IOException {
         // Recuperer la requete HTTP
         String tache = request.getParameter("todo");
+        System.out.println(tache);
         // identification de la tâche
         Action actionCourante = this.getAction(tache);
         
@@ -41,8 +45,8 @@ public class ActionServlet extends HttpServlet {
         {
         actionCourante.execute(request);
         }
-        
-        String vue = this.setVue(tache);
+        String vue="";
+        vue = this.setVue(tache);
         
         request.getRequestDispatcher(vue).forward(request,response);
     }
@@ -94,7 +98,7 @@ public class ActionServlet extends HttpServlet {
         }
         else if ("Connexion".equals(todo))
         {
-           //action = new ConnexionAction();
+           action = new ConnexionAction();
         }
         else if ("Retour".equals(todo))
         {
@@ -103,6 +107,10 @@ public class ActionServlet extends HttpServlet {
         else if ("Validation".equals(todo))
         {
             action = new InscriptionAction();
+        }
+        else if ("RecherchePays".equals(todo))
+        {
+            action = new RecherchePaysAction ();
         }
         return action;
     }
@@ -116,7 +124,8 @@ public class ActionServlet extends HttpServlet {
         }
         else if ("Connexion".equals(todo))
         {
-           
+            // Redirection vers Connexion.html (vue)
+           vue = "/ConnexionVue";
         }
         else if ("Retour".equals(todo))
         {
@@ -126,7 +135,23 @@ public class ActionServlet extends HttpServlet {
         {
             vue = "index.html";
         }
+        else if ("RecherchePays".equals(todo))
+        {
+            vue = "/RecherchePaysVue";
+        }
         return vue;
     }
+    
+    @Override
+  public void init() throws ServletException {
+    super.init();
+    JpaUtil.init();
+  }
+
+  @Override
+  public void destroy() {
+    super.destroy();
+    JpaUtil.destroy();
+  }
 
 }

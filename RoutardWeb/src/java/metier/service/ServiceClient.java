@@ -42,10 +42,12 @@ public class ServiceClient {
 	 * @param client 
 	 */
 	public static void creerClient(Client client) {
+            System.out.println("Nouveau Client :"+client);
 		JpaUtil.creerEntityManager();
 		JpaUtil.ouvrirTransaction();
 		ClientDao.creerClient(client);
 		JpaUtil.validerTransaction();
+            System.out.println("Nouveau Client :"+client);
 		JpaUtil.fermerEntityManager();
 	}
 	
