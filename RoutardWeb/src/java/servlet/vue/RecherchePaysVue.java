@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import metier.modele.Circuit;
 import metier.modele.Pays;
 import metier.modele.Voyage;
 
@@ -45,8 +46,9 @@ public class RecherchePaysVue extends HttpServlet {
             "    <title>recherche/pays/"+p.getNom()+"</title>\n" +
          
             "  </head>\n" +
-            "  <body>\n" +
-            "  <input type =\"submit\" name=\"retour\" value=\"Retour\">\n" +
+            "  <body>\n"
+                    + "<form action =\"./ActionServlet\" method =\"POST\">\n" +
+            "  <a href=\"javascript:history.go(-1)\">Page précedente</a>\n" +
             "  <h1> Voyages en "+p.getNom()+" \n" +
             "  <h2>\n" +
             " <table>\n" +
@@ -56,7 +58,7 @@ public class RecherchePaysVue extends HttpServlet {
             " <img src=\"http://www.lyonmag.com/medias/images/lyon_saint-ex_aeroport.jpg\" alt=\"frame\" />\n" +
             "  </td>\n" +
             "  <td>\n" +
-            " <table>\n" +
+            " <table border =1>\n" +
             "	 <tr>\n" +
             "		<td>Capitale</td>\n" +
             "		<td>"+p.getCapitale()+"</td>\n" +
@@ -87,17 +89,28 @@ public class RecherchePaysVue extends HttpServlet {
             "<p>\n");
             for (Voyage v : list){
                 out.println("<table border =1> "
-                        + " <tr> <td>" +v.getTitre() +"<br>" +v.getClass()+"<br>" +v.getNbJours()+" jours"+"<br>" 
+                        + " <tr> <td>" +v.getTitre() +"<br>" +identifier(v)+"<br>" +v.getNbJours()+" jours"+"<br>" 
                         +v.getDescription()+"</td></tr>"
                         +"</table>"
-                        + "<input type =\"submit\" name=\"retour\" value=\"En savoir plus\">\n");
+                        + "<input type =\"submit\" name=\"todo\" value=\"En Savoir Plus\">\n");
             }
             out.println("</p>\n");
+            out.println("</form>");
             out.println("</body>");
             out.println("</html>");
         }
     }
-
+    protected static String identifier (Voyage v)
+    {
+       if(v instanceof Circuit)
+       {
+           return "Circuit";
+       }
+       else
+       {
+           return "Séjour";
+       }       
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

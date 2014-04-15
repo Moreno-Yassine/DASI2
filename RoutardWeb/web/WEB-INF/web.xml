@@ -16,6 +16,14 @@
         <servlet-name>RecherchePaysVue</servlet-name>
         <servlet-class>servlet.vue.RecherchePaysVue</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RechercheVoyageVue</servlet-name>
+        <servlet-class>servlet.vue.RechercheVoyageVue</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PreDevisVue</servlet-name>
+        <servlet-class>servlet.vue.PreDevisVue</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ActionServlet</servlet-name>
         <url-pattern>/ActionServlet</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>RecherchePaysVue</servlet-name>
         <url-pattern>/RecherchePaysVue</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RechercheVoyageVue</servlet-name>
+        <url-pattern>/RechercheVoyageVue</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PreDevisVue</servlet-name>
+        <url-pattern>/PreDevisVue</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

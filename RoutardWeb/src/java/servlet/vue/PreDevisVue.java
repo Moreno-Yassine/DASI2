@@ -8,18 +8,16 @@ package servlet.vue;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import metier.modele.Pays;
 
 /**
  *
  * @author Slifer
  */
-public class ConnexionVue extends HttpServlet {
+public class PreDevisVue extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,55 +32,18 @@ public class ConnexionVue extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String Validation = (String) request.getAttribute("Validation");
-            if ("false".equals(Validation)){ // en cas d'erreur
-                 out.println("<!DOCTYPE html>");
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Erreur de Connexion</title>");            
+            out.println("<title>Servlet PreDevisVue</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Connexion Impossible</h1>");
-            out.println("<p>Identifiant et/ou Mot de passe erronnés </p>");
-            out.println("<form action =\"http://localhost:8080/RoutardWeb\" method =\"POST\">\n" +
-"<input type =\"submit\" name=\"todo\" value=\"Retour\"/>");
+            out.println("<h1>Servlet PreDevisVue at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            }
-            // Si la connexion s'est bien passée
-            else{
-            out.println("<!DOCTYPE html>"); 
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Consultation</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            
-            out.println("<form action =\"./ActionServlet\" method =\"POST\">\n" +
-"		\n" +
-"		<table>\n" +
-"		<tr> <td><h1>IF ROUTARD</h1></td> <td><h2>"+request.getParameter("Identifiant")+"</h2></td> <td><h2> <A HREF=\"http://localhost:8080/RoutardWeb\">Deconnexion</A></h2> </td>  </tr>\n" +
-"		<tr> Recherche </tr>\n" +
-"		<tr> <td> Rechercher Pays </td> <td> Rechercher Type de circuit </td> </tr>\n" +
-"		<tr> <td> <select name=\"RecherchePays\">");
-            
-                List<Pays> aff =  (List<Pays>)request.getAttribute("AffichagePays");
-                for (Pays p : aff)
-                {
-                    out.println("<option value = "+ p.getNom()+">"+p.getNom()+"</option>");
-                }
-                out.println("</select></td>");
-                out.println(" <td><select name=\"RechercheVoyage\"> <option value=\"circuit\"> Circuit accompagné</option><option value=\"sejour\"> Séjour</option></select> </td> </tr>\n" +
-"		<tr> <td> <input type=\"submit\" value=\"RecherchePays\" name=\"todo\"> </td> <td> <input type=\"submit\" value=\"RechercheVoyage\" name=\"todo\"> </td> <tr> \n" +
-"		</table>\n" +
-"		</form>");
-            
-            out.println("</body>");
-            out.println("</html>");
-            }
         }
-        }
-    
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
