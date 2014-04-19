@@ -1,17 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package servlet.vue;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import metier.modele.Depart;
+import metier.modele.Voyage;
+import metier.service.ServiceVoyage;
+import static servlet.vue.RecherchePaysVue.identifier;
 
 /**
  *
@@ -32,14 +31,26 @@ public class PreDevisVue extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            Voyage v = (Voyage)request.getAttribute("voyageDevis");
+            List<Depart> list = ServiceVoyage.obtenirDeparts(v);
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet PreDevisVue</title>");            
+            out.println("<title>Devis</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet PreDevisVue at " + request.getContextPath() + "</h1>");
+            out.println("<a href=\"javascript:history.go(-1)\">Page précedente</a>" );
+            out.println("<table border =1>" 
+                        + " <tr> <td>" +v.getTitre() +"<br>" +identifier(v)+"<br>" +v.getNbJours()+" jours"+"<br>" 
+                        +v.getDescription()+"</td></tr>"
+                        +"</table>");
+            out.println("<h1> DEVIS </h1>");
+            out.println("<select name = Depart> ");
+             for (Depart d : list){
+                out.println("<option value =" +d.getId()+">"+ d.getDateDeDepart()+" Compagnie : "+d.getDescription()+" Ville : "+d.getVille()+ "  Prix : " +d.getPrix()+"€ </option>");
+            }
+            out.println("<input type =\"text\" name=\"Nb de Personnes\" size = \"2\" maxlength =\"2\" />");
+            out.println("</select>");
             out.println("</body>");
             out.println("</html>");
         }

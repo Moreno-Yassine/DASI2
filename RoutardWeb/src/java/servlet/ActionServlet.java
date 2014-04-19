@@ -42,7 +42,7 @@ public class ActionServlet extends HttpServlet {
         System.out.println(tache);
         // identification de la tâche
         Action actionCourante = this.getAction(tache);
-        
+        // execution de la tâche
         if (actionCourante!=null)
         {
         actionCourante.execute(request);
@@ -118,7 +118,7 @@ public class ActionServlet extends HttpServlet {
         {
             action = new RechercheVoyageAction ();
         }
-        else if ("En Savoir Plus".equals(todo))
+        else //PreDevis
         {
             action = new PreDevisAction();
         }
@@ -153,7 +153,7 @@ public class ActionServlet extends HttpServlet {
         {
             vue = "/RechercheVoyageVue";
         }
-        else if ("En Savoir Plus".equals(todo))
+        else // PreDevis
         {
             vue = "/PreDevisVue";
         }

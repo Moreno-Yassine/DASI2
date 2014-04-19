@@ -69,7 +69,7 @@ public class RechercheVoyageVue extends HttpServlet {
                         + " <tr> <td>" +v.getTitre() +"<br>" +identifier(v)+"<br>" +v.getNbJours()+" jours"+"<br>" 
                         +v.getDescription()+"</td></tr>"
                         +"</table>"
-                        + "<input type =\"submit\" name=\"todo\" value=\"En Savoir Plus\">\n");
+                        + "<input type =\"submit\" name=\"todo\" value="+v.getCode()+">\n");
             }
             out.println("</form>");
             out.println("</p>\n");

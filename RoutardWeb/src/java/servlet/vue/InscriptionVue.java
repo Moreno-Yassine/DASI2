@@ -47,7 +47,7 @@ public class InscriptionVue extends HttpServlet {
 "		<tr> <td>Nom :</td> <td><input type =\"text\" name=\"nom\" size = \"20\" maxlength = \"20\" /> </td> </tr>\n" +
 "		<tr> <td>Prenom :</td> <td><input type =\"text\" name=\"prenom\" size = \"20\"/> </td> </tr>\n" +
 "		<tr> <td>Adresse :</td> <td><input type =\"text\" name=\"adresse\" size = \"40\"/> </td> </tr>\n" +
-"		<tr> <td>Mail :</td> <td><input type =\"text\" name=\"mail\" size = \"20\" maxlength = \"20\" /> </td> </tr>\n" +
+"		<tr> <td>Mail :</td> <td><input type =\"text\" name=\"mail\" size = \"20\" maxlength = \"200\" /> </td> </tr>\n" +
 "		<tr> <td>Tel :</td> <td><input type =\"text\" name=\"tel\" size = \"20\"/>  </td> </tr>\n" +
 "		<tr> <td>Date de Naissance (JJ/MM/AAAA) :</td> <td><input type =\"text\" name=\"jour\" size = \"2\" maxlength = \"2\" />\n" +
 "							<input type =\"text\" name=\"mois\" size = \"2\" maxlength = \"2\" />\n" +

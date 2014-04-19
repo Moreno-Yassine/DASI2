@@ -218,5 +218,15 @@ public class ServiceVoyage {
 		JpaUtil.validerTransaction();
 		JpaUtil.fermerEntityManager();
 	}
+        // METHODE INEXISTANTE DANS LA VERSION ORIGINALE !!!!!!!!!!!!!!!!!!!!
+        public static List<Depart> obtenirDeparts(Voyage v)
+        {
+                JpaUtil.creerEntityManager();
+		JpaUtil.ouvrirTransaction();
+		List<Depart> list = VoyageDao.obtenirDepart(v);
+		JpaUtil.validerTransaction();
+		JpaUtil.fermerEntityManager();
+                return list;
+        }
 	
 }
