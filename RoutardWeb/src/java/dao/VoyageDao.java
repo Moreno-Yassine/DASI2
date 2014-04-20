@@ -97,12 +97,19 @@ public class VoyageDao {
 		// On met également à jour le voyage le contenant
 		JpaUtil.obtenirEntityManager().merge(depart.getVoyage());
 	}
-            // METHODE MANQUANTE !!!!!!!!!!!
+            // METHODES MANQUANTES !!!!!!!!!!!
         
              public static List<Depart> obtenirDepart(Voyage v) {
             EntityManager em = JpaUtil.obtenirEntityManager();
 		Query query = em.createQuery("SELECT d FROM Depart d " + "WHERE d.voyage=:v");
 		query.setParameter("v", v);
 		return (List<Depart>)query.getResultList();
-    }
+             }
+
+            public static Depart obtenirDepartid(int id) {
+            EntityManager em = JpaUtil.obtenirEntityManager();
+		Query query = em.createQuery("SELECT d FROM Depart d " + "WHERE d.id=:id");
+		query.setParameter("id", id);
+		return (Depart)query.getSingleResult();
+            }
 }

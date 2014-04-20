@@ -12,6 +12,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import metier.modele.Devis;
+import metier.modele.Voyage;
+import static servlet.vue.RecherchePaysVue.identifier;
 
 /**
  *
@@ -32,14 +35,54 @@ public class DevisVue extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            Voyage v = (Voyage)request.getAttribute("voyage");
+            Devis resultat = (Devis)request.getAttribute("devis");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet DevisVue</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet DevisVue at " + request.getContextPath() + "</h1>");
+            out.println("  <head>\n" +
+            "    <title>DEVIS</title>\n" +
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+            "    <!-- Bootstrap -->\n" +
+            "    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\" media=\"screen\">\n" +
+            "	<link href=\"sticky-footer-navbar.css\" rel=\"stylesheet\">\n" +
+            "\n" +
+            "    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->\n" +
+            "    <!--[if lt IE 9]>\n" +
+            "      <script src=\"http://getbootstrap.com/docs-assets/js/html5shiv.js\"></script>\n" +
+            "      <script src=\"http://getbootstrap.com/docs-assets/js/respond.min.js\"></script>\n" +
+            "    <![endif]-->\n" +
+            "  </head>");
+            out.println("<body background=\"im.jpg\">");
+            out.println("<!-- Fixed navbar -->\n" +
+        "		<div class=\"navbar navbar-inverse\" role=\"navigation\">\n" +
+        "		  <div class=\"container\">\n" +
+        "			<div class=\"navbar-header\">\n" +
+        "			<p class=\"navbar-brand\">IF'ROUTARD</p>\n" +
+        "			<ul class=\"nav navbar-nav\">\n" +
+        "			 <li><a href=\"javascript:history.go(-1)\">Precedent</a></li>\n" +
+        "			</ul>\n" +
+        "			</div>\n" +
+        "		  </div>\n" +
+        "		</div>");
+            out.println("<div class=\"container\">\n" +
+"		<h3><span class=\"label label-success\">Devis</span></h3>\n" +
+"		\n" +
+"		  <p class=\"lead\">");
+            out.println("<table class=\"table\" border =1>" 
+                        + " <tr> <td>" +v.getTitre() +"<br>" +identifier(v)+"<br>" +v.getNbJours()+" jours"+"<br>" 
+                        +v.getDescription()+"</td></tr>"
+                        +"</table>");
+            out.println("<form action =\"./ActionServlet\" method =\"POST\">");
+            
+            out.println("<table class=\"table\" border =1>");
+            out.println("<tr> <td>"+resultat.toString()+"</td></tr>");
+            
+            out.println("</table>");
+
+            
+            out.println("<button class=\"btn btn-default\" type =\"submit\" name=\"todo\" value=\"Valider\"/> Demander Devis </button>");
+            out.println("</p>");
+            out.println("</div>");
             out.println("</body>");
             out.println("</html>");
         }

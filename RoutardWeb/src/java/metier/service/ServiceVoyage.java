@@ -218,7 +218,8 @@ public class ServiceVoyage {
 		JpaUtil.validerTransaction();
 		JpaUtil.fermerEntityManager();
 	}
-        // METHODE INEXISTANTE DANS LA VERSION ORIGINALE !!!!!!!!!!!!!!!!!!!!
+        
+        // METHODES INEXISTANTES DANS LA VERSION ORIGINALE !!!!!!!!!!!!!!!!!!!!
         public static List<Depart> obtenirDeparts(Voyage v)
         {
                 JpaUtil.creerEntityManager();
@@ -227,6 +228,16 @@ public class ServiceVoyage {
 		JpaUtil.validerTransaction();
 		JpaUtil.fermerEntityManager();
                 return list;
+        }
+        
+        public static Depart obtenirDepartId (int id)
+        {
+                JpaUtil.creerEntityManager();
+		JpaUtil.ouvrirTransaction();
+		Depart result = VoyageDao.obtenirDepartid(id);
+		JpaUtil.validerTransaction();
+		JpaUtil.fermerEntityManager();
+                return result;
         }
 	
 }

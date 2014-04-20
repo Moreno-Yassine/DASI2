@@ -65,18 +65,18 @@ public class ServiceEmploye {
 	/**
 	 * Obtenir le conseiller spécialiste d'un pays le moins occupé. Si plusieurs spécialistes
 	 * sont également occupés, on renvoie le plus jeune (critère un peu abritraire, certes)
+         * [web] : cette méthode est inefficace
 	 * @param pays
 	 * @return Le spécialiste le moins occupé, ou null s'il n'y en a aucun
 	 */
 	public static Conseiller obtenirSpecialiste(Pays pays) {
-		List<Conseiller> specialistes = obtenirConseillersParSpecialite(pays);
+		List<Conseiller> specialistes = obtenirConseillers();
 		// On prend celui qui a le moins de devis
 		Conseiller result = null;
-		for (Conseiller c : specialistes) {
-			if (result == null || c.getDevis().size() < result.getDevis().size())
-				result = c;
-		}
+                int higher = specialistes.size()-1;
+                int lower = 0;
+                int random = (int)(Math.random() * (higher-lower)) + lower;
 		
-		return result;
+		return specialistes.get(random);
 	}
 }

@@ -2,6 +2,7 @@ package servlet.action;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import metier.modele.Client;
 import metier.modele.Pays;
 import metier.service.ServiceClient;
@@ -24,6 +25,8 @@ public class ConnexionAction extends Action{
         request.setAttribute("Validation", "false"); // ERREUR
         }
         else if (ServiceClient.testerMotDePasse(client, pw) == true) {
+        HttpSession session = request.getSession(true);
+        session.setAttribute("loggedUser", client);
         request.setAttribute("Validation", "true");  // OK
         List<Pays> affichePays = ServiceVoyage.obtenirPays();
         request.setAttribute("AffichagePays",affichePays);

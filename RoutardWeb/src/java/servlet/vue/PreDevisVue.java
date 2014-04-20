@@ -71,7 +71,7 @@ public class PreDevisVue extends HttpServlet {
             out.println("<form action =\"./ActionServlet\" method =\"POST\">");
             out.println("<select name =Depart> ");
              for (Depart d : list){
-                out.println("<option value =" +d.getId()+">"+ d.getDateDeDepart()+" Compagnie : "+d.getDescription()+" Ville : "+d.getVille()+ "  Prix : " +d.getPrix()+"€ </option>");
+                out.println("<option value =" +d.getId()+">"+ d.getDateDeDepart()+"Compagnie: "+d.getDescription()+" Ville: "+d.getVille()+ "  Prix: " +d.getPrix()+"€ </option>");
             }
             
             out.println("</select>");
