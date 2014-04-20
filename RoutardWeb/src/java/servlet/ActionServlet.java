@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import servlet.action.Action;
 import servlet.action.ConnexionAction;
+import servlet.action.DevisAction;
 import servlet.action.InscriptionAction;
 import servlet.action.PreDevisAction;
 import servlet.action.RecherchePaysAction;
@@ -118,6 +119,10 @@ public class ActionServlet extends HttpServlet {
         {
             action = new RechercheVoyageAction ();
         }
+        else if ("Valider".equals(todo))
+        {
+            action = new DevisAction();
+        }
         else //PreDevis
         {
             action = new PreDevisAction();
@@ -152,6 +157,10 @@ public class ActionServlet extends HttpServlet {
         else if ("RechercheVoyage".equals(todo))
         {
             vue = "/RechercheVoyageVue";
+        }
+        else if ("Valider".equals(todo))
+        {
+            vue = "/DevisVue";
         }
         else // PreDevis
         {

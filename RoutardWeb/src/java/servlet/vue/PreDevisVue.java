@@ -35,22 +35,52 @@ public class PreDevisVue extends HttpServlet {
             List<Depart> list = ServiceVoyage.obtenirDeparts(v);
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Devis</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<a href=\"javascript:history.go(-1)\">Page précedente</a>" );
-            out.println("<table border =1>" 
+            out.println("  <head>\n" +
+            "    <title>DEVIS</title>\n" +
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+            "    <!-- Bootstrap -->\n" +
+            "    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\" media=\"screen\">\n" +
+            "	<link href=\"sticky-footer-navbar.css\" rel=\"stylesheet\">\n" +
+            "\n" +
+            "    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->\n" +
+            "    <!--[if lt IE 9]>\n" +
+            "      <script src=\"http://getbootstrap.com/docs-assets/js/html5shiv.js\"></script>\n" +
+            "      <script src=\"http://getbootstrap.com/docs-assets/js/respond.min.js\"></script>\n" +
+            "    <![endif]-->\n" +
+            "  </head>");
+            out.println("<body background=\"im.jpg\">");
+            out.println("<!-- Fixed navbar -->\n" +
+        "		<div class=\"navbar navbar-inverse\" role=\"navigation\">\n" +
+        "		  <div class=\"container\">\n" +
+        "			<div class=\"navbar-header\">\n" +
+        "			<p class=\"navbar-brand\">IF'ROUTARD</p>\n" +
+        "			<ul class=\"nav navbar-nav\">\n" +
+        "			 <li><a href=\"javascript:history.go(-1)\">Precedent</a></li>\n" +
+        "			</ul>\n" +
+        "			</div>\n" +
+        "		  </div>\n" +
+        "		</div>");
+            out.println("<div class=\"container\">\n" +
+"		<h3><span class=\"label label-success\">Devis</span></h3>\n" +
+"		\n" +
+"		  <p class=\"lead\">");
+            out.println("<table class=\"table\" border =1>" 
                         + " <tr> <td>" +v.getTitre() +"<br>" +identifier(v)+"<br>" +v.getNbJours()+" jours"+"<br>" 
                         +v.getDescription()+"</td></tr>"
                         +"</table>");
-            out.println("<h1> DEVIS </h1>");
-            out.println("<select name = Depart> ");
+            out.println("<form action =\"./ActionServlet\" method =\"POST\">");
+            out.println("<select name =Depart> ");
              for (Depart d : list){
                 out.println("<option value =" +d.getId()+">"+ d.getDateDeDepart()+" Compagnie : "+d.getDescription()+" Ville : "+d.getVille()+ "  Prix : " +d.getPrix()+"€ </option>");
             }
-            out.println("<input type =\"text\" name=\"Nb de Personnes\" size = \"2\" maxlength =\"2\" />");
+            
             out.println("</select>");
+            
+            out.println("<input type =\"text\" name=\"Personnes\" size = \"2\" maxlength =\"2\">Personne(s) </input>");
+            
+            out.println("<button class=\"btn btn-default\" type =\"submit\" name=\"todo\" value=\"Valider\"/> Demander Devis </button>");
+            out.println("</p>");
+            out.println("</div>");
             out.println("</body>");
             out.println("</html>");
         }

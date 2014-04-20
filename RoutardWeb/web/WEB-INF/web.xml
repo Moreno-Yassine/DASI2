@@ -24,6 +24,10 @@
         <servlet-name>PreDevisVue</servlet-name>
         <servlet-class>servlet.vue.PreDevisVue</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DevisVue</servlet-name>
+        <servlet-class>servlet.vue.DevisVue</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ActionServlet</servlet-name>
         <url-pattern>/ActionServlet</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>PreDevisVue</servlet-name>
         <url-pattern>/PreDevisVue</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DevisVue</servlet-name>
+        <url-pattern>/DevisVue</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,33 +1,70 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>IF'ROUTARD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+	<link href="sticky-footer-navbar.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 
 
-	<head>
-	<meta http-equiv ="Content-type" content = "text/html; charset=UTF-8">
-	<title> ROUTARD'IF : VOTRE VOYAGE, SIMPLEMENT ... </title>
-	</head>
-	
-	<body>
-	
-	<h1> IF'Routard </h1>
-	<h2> L'agence de voyage des INSALIENS </h2>
-	<br/>
-	<br/>
-	<h3> Je suis déjà client(e) </h3>
-		<form action ="http://localhost:8080/RoutardWeb/ActionServlet" method ="POST">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+      <script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body background="im.jpg">
+  
+		<!-- Fixed navbar -->
+		<div class="navbar navbar-inverse" role="navigation">
+		  <div class="container">
+			<div class="navbar-header">
+			  <p class="navbar-brand">IF'ROUTARD</p>
+			</div>
+		  </div>
+		</div>
+
+		<!-- Begin page content -->
 		
-		<input type = "hidden" name ="todo" value ="Connexion" />
-		Identifiant : <input type ="text" name="Identifiant" size = "20" maxlength = "20" /><br/>
-		MDP : <input type ="password" name="MotdePasse" size = "20"/><br/>
-		 <input type ="submit" name="todo" value="Connexion"/>
-	
-		</form>
-	<br/>
-	<h3> Enregistrement </h3>
-		<form action ="http://localhost:8080/RoutardWeb/ActionServlet" method ="POST">
-		 <input type ="submit" name="todo" value="Inscription"/>
-		</form>
-	</body>
-	
-	
+		
+		<div class="container">
+		<h3><span class="label label-success">Connexion</span></h3>
+		
+		  <p class="lead">
+		  <form action ="http://localhost:8080/RoutardWeb/ActionServlet" method ="POST">
+			
+			<div class="input-group">
+			<span class="input-group-addon">Login :</span>
+			<input type="text" class="form-control" placeholder="Username" name="Identifiant" size = "20" maxlength = "20">
+			<span class="input-group-addon">Mot de Passe :</span>
+			<input type="password" class="form-control" placeholder="Password" name="MotdePasse" size = "20">
+			</div>
+
+			<button type="submit" class="btn btn-default" name="todo" value="Connexion">Connexion</button>
+		  </form>
+		  </p>
+		</div>
+		
+		<div class="container">
+		<h3><span class="label label-success">Inscription</span></h3>
+			 <p class="lead">
+			 <form action ="http://localhost:8080/RoutardWeb/ActionServlet" method ="POST">
+			 <button type="submit" class="btn btn-default" name="todo" value="Inscription">Inscription</button>
+			 </form>
+			 </p>
+		</div>
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted">Developpe par Moreno Yassine</p>
+      </div>
+    </div
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>

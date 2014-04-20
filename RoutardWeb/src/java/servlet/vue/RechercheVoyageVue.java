@@ -37,44 +37,62 @@ public class RechercheVoyageVue extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             List<Voyage> list = (List<Voyage>) request.getAttribute("List");
 
-             out.println("<!DOCTYPE html>");
+            out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("  <head>\n" +
-            "    <meta charset=\"UTF-8\">\n" +
-            "    <title>Recherche Voyages</title>\n" +
-         
-            "  </head>\n" +
-            "  <body>\n"
-                    + "<form action =\"./ActionServlet\" method =\"POST\">\n" +
-            "  <a href=\"javascript:history.go(-1)\">Page précedente</a>\n" +
-            "  <h1> Resultats de la recherche \n" +
-            "  <h2>\n" +
-            " <table>\n" +
-            " \n" +
-            " <tr>\n" +
-            " <td>\n" +
-            " <img src=\"http://immoxygene.files.wordpress.com/2012/01/458-circuits-touristiques-et-c3a9colo-en-macc3a9doine.jpg\" alt=\"frame\" />\n" +
-            "  </td>\n" +
-            "	</table>\n" +
-            "	</h2>\n" +
-            "	\n" +
-            "	<p>\n" +
-            "	Liste de voyages\n" +
-            "	</p>\n" +
-            "\n" +
-            "\n" +
-            "<p>\n");
+                    "    <title>BIENVENUE</title>\n" +
+                    "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                    "    <!-- Bootstrap -->\n" +
+                    "    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\" media=\"screen\">\n" +
+                    "	<link href=\"sticky-footer-navbar.css\" rel=\"stylesheet\">\n" +
+                    "\n" +
+                    "    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->\n" +
+                    "    <!--[if lt IE 9]>\n" +
+                    "      <script src=\"http://getbootstrap.com/docs-assets/js/html5shiv.js\"></script>\n" +
+                    "      <script src=\"http://getbootstrap.com/docs-assets/js/respond.min.js\"></script>\n" +
+                    "    <![endif]-->\n" +
+                    "  </head>\n"+
+                    
+                    
+            "  <body background=\"im.jpg\">\n"+
+                    "<div class=\"navbar navbar-inverse\" role=\"navigation\">\n" +
+"		  <div class=\"container\">\n" +
+"			<div class=\"navbar-header\">\n" +
+"			<p class=\"navbar-brand\">IF'ROUTARD</p>\n" +
+"			<ul class=\"nav navbar-nav\">\n" +
+"			 <li><a href=\"javascript:history.go(-1)\">Precedent</a></li>\n" +
+"			</ul>\n" +
+"			</div>\n" +
+"		  </div>\n" +
+"		</div>\n"
+                    
+                +"<div class=\"container\">\n" +
+"		<h3><span class=\"label label-Success\">Recherche par type</span></h3>\n"    
+                    + "<form action =\"./ActionServlet\" method =\"POST\">\n" +"<p class=\"lead\">"+
+
+                "<div class=\"well\">\n");
             for (Voyage v : list){
-                out.println("<table border =1> "
+                out.println("<table class=\"table\" border =1> "
                         + " <tr> <td>" +v.getTitre() +"<br>" +identifier(v)+"<br>" +v.getNbJours()+" jours"+"<br>" 
                         +v.getDescription()+"</td></tr>"
                         +"</table>"
-                        + "<input type =\"submit\" name=\"todo\" value="+v.getCode()+">\n");
+                        + "<button class=\"btn btn-default\" type =\"submit\" name=\"todo\" value="+v.getCode()+">En Savoir Plus</button>\n");
             }
-            out.println("</form>");
-            out.println("</p>\n");
-            out.println("</body>");
-            out.println("</html>");
+            out.println("</div>\n");
+            out.println("</p>");
+            out.println("</div>");
+            out.println(" <div id=\"footer\">\n" +
+                "      <div class=\"container\">\n" +
+                "        <p class=\"text-muted\">Developpe par Moreno Yassine</p>\n" +
+                "      </div>\n" +
+                "    </div\n" +
+                "\n" +
+                "    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->\n" +
+                "    <script src=\"//code.jquery.com/jquery.js\"></script>\n" +
+                "    <!-- Include all compiled plugins (below), or include individual files as needed -->\n" +
+                "    <script src=\"js/bootstrap.min.js\"></script>\n" +
+                "  </body>\n" +
+                "</html>");
         }
     }
 
