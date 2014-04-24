@@ -72,15 +72,16 @@ public class DevisVue extends HttpServlet {
                         + " <tr> <td>" +v.getTitre() +"<br>" +identifier(v)+"<br>" +v.getNbJours()+" jours"+"<br>" 
                         +v.getDescription()+"</td></tr>"
                         +"</table>");
-            out.println("<form action =\"./ActionServlet\" method =\"POST\">");
             
-            out.println("<table class=\"table\" border =1>");
-            out.println("<tr> <td>"+resultat.toString()+"</td></tr>");
-            
-            out.println("</table>");
+            out.println("<div class=\"jumbotron\">");
+            out.println("<p>Devis: "+resultat.getId()+"</p><br>");
+            out.println("<p>Client: "+resultat.getClient().getNomComplet()+"</p>"+"<p>    Conseiller: "+resultat.getConseiller().getNomComplet()+"</p><br>");
+            out.println("<p>Description: "+resultat.getDepart().getDescription()+" LE: "+resultat.getDepart().getDateDeDepart()+" DEPART:"+resultat.getDepart().getVille()+"</p><br>");
+            out.println("<p>Nombre de Personnes: "+resultat.getNbPersonnes()+"</p><br>");
+            out.println("<p>Prix par Personne: "+resultat.getDepart().getPrix()+"€</p><br>");
+            out.println("<h2>Prix total: "+resultat.getNbPersonnes()*resultat.getDepart().getPrix()+"€</h2><br>");
+            out.println("</div>");
 
-            
-            out.println("<button class=\"btn btn-default\" type =\"submit\" name=\"todo\" value=\"Valider\"/> Demander Devis </button>");
             out.println("</p>");
             out.println("</div>");
             out.println("</body>");

@@ -139,7 +139,7 @@ public class ConnexionVue extends HttpServlet {
                 List<Pays> aff =  (List<Pays>)request.getAttribute("AffichagePays");
                 for (Pays p : aff)
                 {
-                    out.println("<option value = "+ p.getNom()+">"+p.getNom()+"</option>");
+                    out.println("<option value="+p.getCode()+">"+p.getNom()+"</option>");
                 }
                 out.println("</select></td>\n" +
 "				<td><select name=\"RechercheVoyage\"> <option value=\"circuit\"> Circuit accompagné</option><option value=\"sejour\"> Séjour</option></select> </td> </tr>\n" +

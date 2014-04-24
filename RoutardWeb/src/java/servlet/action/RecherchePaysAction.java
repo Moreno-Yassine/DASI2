@@ -14,8 +14,8 @@ public class RecherchePaysAction extends Action {
 
     @Override
     public void execute(HttpServletRequest request) {
-       String pays = request.getParameter("RecherchePays");
-       Pays p = ServiceVoyage.obtenirPays(pays);
+       String code = request.getParameter("RecherchePays");
+       Pays p = ServiceVoyage.obtenirPaysParCode(code);
        if (p!=null)
        {
            request.setAttribute("Trouve","true");
