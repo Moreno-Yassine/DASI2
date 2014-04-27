@@ -1,7 +1,7 @@
-Thu Apr 24 08:57:05 CEST 2014 : Apache Derby Serveur réseau - 10.8.3.0 - (1405108) démarré et prêt à accepter les connexions sur le port 1527
+Thu Apr 24 23:09:38 CEST 2014 : Apache Derby Serveur réseau - 10.8.3.0 - (1405108) démarré et prêt à accepter les connexions sur le port 1527
 ----------------------------------------------------------------
-Thu Apr 24 08:58:19 CEST 2014:
-Amorçage de Derby version The Apache Software Foundation - Apache Derby - 10.8.3.0 - (1405108) : instance a816c00e-0145-9285-f7b2-ffffe65ecfa7 
+Thu Apr 24 23:12:32 CEST 2014:
+Amorçage de Derby version The Apache Software Foundation - Apache Derby - 10.8.3.0 - (1405108) : instance a816c00e-0145-9592-836d-ffffe65ecfa7 
 dans le répertoire de base de données C:\Users\Slifer\Documents\Projects\DASI2\IFRoutard-master\database\ifroutard  avec le chargeur de classe sun.misc.Launcher$AppClassLoader@47858e
 
 java.vendor=Oracle Corporation
@@ -12,3 +12,9 @@ os.arch=x86
 os.version=6.1
 derby.system.home=C:\Users\Slifer\Documents\Projects\DASI2\IFRoutard-master\database
 Chargeur de classe de la base de données démarré - derby.database.classpath=''
+----------------------------------------------------------------
+Thu Apr 24 23:20:16 CEST 2014 : fermeture du moteur Derby
+----------------------------------------------------------------
+Thu Apr 24 23:20:16 CEST 2014:
+Fermeture de l'instance a816c00e-0145-9592-836d-ffffe65ecfa7 sur le répertoire de base de données C:\Users\Slifer\Documents\Projects\DASI2\IFRoutard-master\database\ifroutard avec le chargeur de classe sun.misc.Launcher$AppClassLoader@47858e
+----------------------------------------------------------------

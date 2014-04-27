@@ -69,14 +69,19 @@ public class PreDevisVue extends HttpServlet {
                         +v.getDescription()+"</td></tr>"
                         +"</table>");
             out.println("<form action =\"./ActionServlet\" method =\"POST\">");
-            out.println("<select name =Depart> ");
+            out.println("<table class=\"table\"> ");
              for (Depart d : list){
-                out.println("<option value =" +d.getId()+">"+ d.getDateDeDepart()+"Compagnie: "+d.getDescription()+" Ville: "+d.getVille()+ "  Prix: " +d.getPrix()+"€ </option>");
+                out.println("<tr><div class=\"radio\">\n" +
+                "  <label>\n" +
+                "    <input type=\"radio\" name=\"Depart\" value=\""+d.getId()+"\">\n" +
+                d.getDateDeDepart()+"Compagnie: "+d.getDescription()+" Ville: "+d.getVille()+ "  Prix: " +d.getPrix()+"€" +
+                "  </label>\n" +
+                "</div></tr>");
             }
             
-            out.println("</select>");
-            
-            out.println("<input type =\"text\" name=\"Personnes\" size = \"2\" maxlength =\"2\">Personne(s) </input>");
+            out.println("</table>");
+            out.println("<br>");
+            out.println("<input required type =\"text\" name=\"Personnes\" size = \"2\" maxlength =\"2\">Personne(s) </input>");
             
             out.println("<button class=\"btn btn-default\" type =\"submit\" name=\"todo\" value=\"Valider\"/> Demander Devis </button>");
             out.println("</p>");

@@ -71,16 +71,16 @@ public class InscriptionVue extends HttpServlet {
                 "			\n" +
                 "			<table class =\"table\">\n" +
                 "			<tr> <td>Civilite :</td> <td> <select name=\"civilite\" size=><option value=M>MR</option><option value=MME>MME</option></select> </td> </tr>\n" +
-                "			<tr> <td>Nom :</td> <td><input type =\"text\" name=\"nom\" size = \"20\" maxlength = \"20\" /> </td> </tr>\n" +
-                "			<tr> <td>Prenom :</td> <td><input type =\"text\" name=\"prenom\" size = \"20\"/> </td> </tr>\n" +
-                "			<tr> <td>Adresse :</td> <td><input type =\"text\" name=\"adresse\" size = \"40\"/> </td> </tr>\n" +
-                "			<tr> <td>Mail :</td> <td><input type =\"text\" name=\"mail\" size = \"20\" maxlength = \"200\" /> </td> </tr>\n" +
-                "			<tr> <td>Tel :</td> <td><input type =\"text\" name=\"tel\" size = \"20\"/>  </td> </tr>\n" +
-                "			<tr> <td>Date de Naissance (JJ/MM/AAAA) :</td> <td><input type =\"text\" name=\"jour\" size = \"2\" maxlength = \"2\" />\n" +
-                "							<input type =\"text\" name=\"mois\" size = \"2\" maxlength = \"2\" />\n" +
-                "							<input type =\"text\" name=\"annee\" size = \"4\" maxlength = \"4\" /> </td> </tr>\n" +
-                "			<tr> <td>Mot de Passe :</td> <td><input type =\"password\" name=\"mdp\" size = \"20\" maxlength = \"20\" /> </td> </tr>\n" +
-                "			<tr> <td>Confirmer Mot de Passe :</td> <td><input type =\"password\" name=\"conf_mdp\" size = \"20\" maxlength = \"20\" /> </td> </tr>\n" +
+                "			<tr> <td>Nom :</td> <td><input required type =\"text\" name=\"nom\" size = \"20\" maxlength = \"20\" /> </td> </tr>\n" +
+                "			<tr> <td>Prenom :</td> <td><input required type =\"text\" name=\"prenom\" size = \"20\"/> </td> </tr>\n" +
+                "			<tr> <td>Adresse :</td> <td><input required type =\"text\" name=\"adresse\" size = \"40\"/> </td> </tr>\n" +
+                "			<tr> <td>Mail :</td> <td><input required type =\"text\" name=\"mail\" size = \"20\" maxlength = \"200\" /> </td> </tr>\n" +
+                "			<tr> <td>Tel :</td> <td><input required type =\"text\" name=\"tel\" size = \"20\"/>  </td> </tr>\n" +
+                "			<tr> <td>Date de Naissance (JJ/MM/AAAA) :</td> <td><input required type =\"text\" name=\"jour\" size = \"2\" maxlength = \"2\" />\n" +
+                "							<input required type =\"text\" name=\"mois\" size = \"2\" maxlength = \"2\" />\n" +
+                "							<input required type =\"text\" name=\"annee\" size = \"4\" maxlength = \"4\" /> </td> </tr>\n" +
+                "			<tr> <td>Mot de Passe :</td> <td><input required type =\"password\" name=\"mdp\" size = \"20\" maxlength = \"20\" /> </td> </tr>\n" +
+                "			<tr> <td>Confirmer Mot de Passe :</td> <td><input required type =\"password\" name=\"conf_mdp\" size = \"20\" maxlength = \"20\" /> </td> </tr>\n" +
                 "			</table>\n" +
                 "			<button type=\"submit\" class=\"btn btn-default\" name=\"todo\" value=\"Validation\">Valider</button>\n" +
                 "			<button type=\"submit\" class=\"btn btn-default\" name=\"todo\" value=\"Retour\">Retour</button>\n" +
